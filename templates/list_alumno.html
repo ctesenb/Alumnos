@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Listado</title>
+    <link
+      href="{{ url_for('static', path='/css/bootstrap.css') }}"
+      rel="stylesheet"
+    />
+    <script src="static/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <div class="container w-50">
+        <h1>Lista de Alumnos</h1>
+
+        <table class="table table-hover table-sm">
+          <thead>
+            <td>Id</td>
+            <td>Nombre Completo</td>
+            <td>Sexo</td>
+            <td>Cursos</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </thead>
+          {% for alumno in alumno_list %}
+          <tr>
+            <td>
+              <a href="/alumno/{{alumno.id}}">{{alumno.id}}</a>
+            </td>
+            <td>{{alumno.apellido}},{{alumno.nombre}}</td>
+            <td>
+              <script type="text/javascript">
+                var sexo = "{{alumno.sexo}}";
+                let parrafo = document.createElement("p");
+                sexo.addEventListener('change', establecerSexo);
+                function establecerSexo() {
+                  if (sexo == 'M') {
+                    parrafo.textContent = <img
+                        src="/static/images/male.png"
+                        width="50"
+                        height="50"
+                        alt="male"
+                        title="male"
+                      />;
+                  } else if (sexo == 'F') {
+                    parrafo.textContent = <img
+                        src="/static/images/male.png"
+                        width="50"
+                        height="50"
+                        alt="male"
+                        title="male"
+                      />;
+                  }
+                }
+              </script>
+              {{alumno.sexo}}
+              <p></p>
+            </td>
+            <td>{{alumno.cursos}}</td>
+            <td>
+              <a class="btn btn-warning" href="/alumno/update/{{alumno.id}}"
+                >Actualizar</a
+              >
+            </td>
+            <td>
+              <a
+                class="btn btn-danger"
+                href="/alumno/delete/{{alumno.id}}"
+                >Eliminar</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+        <a class="btn btn-success" href="/create_alumno_ui"
+          >Registrar Nuevo Alumno</a
+        > &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger" href="javascript:history.back()">Atrás</a>
+      </div>
+    </form>
+  </body>
+</html>

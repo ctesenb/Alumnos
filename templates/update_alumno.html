@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Actualizar</title>
+    <link
+      href="{{ url_for('static', path='/css/bootstrap.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container w-50">
+      <div class="card text-left" style="width: 32rem; text-align: center">
+        <div class="card-body">
+          <div class="card-header">
+            <h1>Actualizar Alumno</h1>
+          </div>
+          <form method="post" action="/update_alumno">
+            <div class="mb-3">
+              <label for="carrera" class="form-label">Carrera</label>
+              <input
+                type="text"
+                class="form-control"
+                id="carrera"
+                name="carrera"
+                value="{{alumno.carrera}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="semestre" class="form-label">Semestre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="semestre"
+                name="semestre"
+                value="{{alumno.semestre}}"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="hidden"
+                class="form-control"
+                id="id"
+                name="id"
+                value="{{alumno.id}}"
+                readonly
+              />
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Actualizar" />
+            &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger" href="javascript:history.back()">Atrás</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
