@@ -1,5 +1,5 @@
 from sqlalchemy.schema import Column
-from sqlalchemy.types import String, Integer, Text
+from sqlalchemy.types import String, Integer
 from config.db import Base
 
 class AlumnoM(Base):

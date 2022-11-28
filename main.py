@@ -5,7 +5,6 @@ from fastapi import FastAPI
 from fastapi import Request, Depends, Request, Form
 from config.db import SessionLocal, engine
 import model.alumno_model
-from schema.alumno_schema import AlumnoS
 from sqlalchemy.orm import Session
 from model.alumno_model import AlumnoM
 
