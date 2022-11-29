@@ -1,3 +1,6 @@
+
+
+
 <html>
   <head>
     <title>Listado</title>
@@ -6,12 +9,24 @@
       rel="stylesheet"
     />
     <script src="static/js/bootstrap.min.js"></script>
+    <link
+      href="{{ url_for('static', path='/css/estilos.css') }}"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <form>
-      <div class="container w-50">
+      <div class="cabecera">
         <h1>Lista de Alumnos</h1>
+        <div class="enlaces--cabecera">
+          
+          <a class="btn btn-success" href="/create_alumno_ui">Registrar Nuevo Alumno</a>
+          <a class="btn btn-danger" href="/">Atrás</a>
+        </div>
+      </div>
+      
 
+        <div class="container w-50"></div>
         <table class="table table-hover table-sm">
           <thead>
             <td>Id</td>
@@ -65,15 +80,18 @@
               <a
                 class="btn btn-danger"
                 href="/alumno/delete/{{alumno.id}}"
-                >Eliminar</a
+                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"
+                  fill="rgba(72,72,72,1)" />
+              </svg></a
               >
             </td>
           </tr>
           {% endfor %}
         </table>
-        <a class="btn btn-success" href="/create_alumno_ui"
-          >Registrar Nuevo Alumno</a
-        > &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger" href="javascript:history.back()">Atrás</a>
       </div>
     </form>
   </body>

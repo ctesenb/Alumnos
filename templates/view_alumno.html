@@ -5,6 +5,10 @@
       href="{{ url_for('static', path='/css/bootstrap.css') }}"
       rel="stylesheet"
     />
+    <link
+      href="{{ url_for('static', path='/css/estilos.css') }}"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container w-50">
@@ -37,7 +41,7 @@
           <p class="card-text">Cursos: {{alumno.cursos}}</p>
         </div>
       </div>
-      <a class="btn btn-danger" href="javascript:history.back()">Atrás</a>
+      <a class="btn btn-danger" href="/alumno">Atrás</a>
     </div>
   </body>
 </html>

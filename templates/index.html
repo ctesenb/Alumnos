@@ -5,77 +5,92 @@
     <title>Alumnos DB</title>
     <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
     <script src="static/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
-  <body>
+  <style>
+    body {
+      min-height: 100vh;
+    }
+  
+    body.home {
+      display: flex;
+      align-items: center;
+      background-image: url(https://arquitecturapanamericana.com/wp-content/gallery/AULARIO-EN-EL-CAMPUS-DE-LA-UNIVERSIDAD-RICARDO-PALMA%2C-SURCO/AULARIO-EN-EL-CAMPUS-DE-LA-UNIVERSIDAD-R.-P.-001.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      backdrop-filter: brightness(0.4);
+    }
+  
+    .icon {
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      box-shadow: 1px -5px 20px 0px rgb(0 0 0 / 21%);
+      display: grid;
+      place-content: center;
+      border-radius: 50%;
+    }
+  
+    .icon svg {
+      width: 36px;
+    }
+  
+    .cont-enlaces {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      margin-top: 70px;
+      flex-wrap: wrap;
+    }
+  
+    .cont-enlaces a {
+      padding: 85px 40px;
+      position: relative;
+      box-shadow: 1px -5px 20px 0px rgb(0 0 0 / 21%);
+      border-radius: 15px;
+      background: rgb(255 255 255);
+      text-decoration: none;
+      transition: .4s ease all;
+      text-align: center;
+    }
+    .cont-enlaces a:hover{
+      transform: translateY(-15px);
+    }
+    .enlace-texto h4{
+      text-align: center;
+    }
+  </style>
+  
+  <body class="home">
+  
     <div class="container w-50">
-      <h1>Grupo de Alumnos</h1>
-      <hr class="text-primary" />
-      <p>
-        Bievenido, pagina de los alumnos de la Universidad Ricardo Palma.
-        Seleccione <a href="/alumno">aqui</a> para ver el
-        listado de alumnos.
-      </p>
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="/static/images/male.png"
-              class="d-block w-20"
-              alt="Maculino"
-              height="350"
-              width="450"
-            />
+      <h1 style="text-align: center; color: #fff;">Cursos de la Ricardo Palma</h1>
+      <div class="cont-enlaces">
+        <a href="/alumno" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M2 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H2zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm8.284 3.703A8.002 8.002 0 0 1 23 22h-2a6.001 6.001 0 0 0-3.537-5.473l.82-1.824zm-.688-11.29A5.5 5.5 0 0 1 21 8.5a5.499 5.499 0 0 1-5 5.478v-2.013a3.5 3.5 0 0 0 1.041-6.609l.555-1.943z"
+                fill="rgba(117,117,117,1)" />
+            </svg>
           </div>
-          <div class="carousel-item">
-            <img
-              src="/static/images/female.png"
-              class="d-block w-20"
-              alt="Femenino"
-              height="350"
-              width="450"
-            />
+          <div class="enlace-texto">
+            <h4>Grupo de Alumnos<br><strong>Ver el
+              listado de alumnos.</strong></h4>
           </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Regresar</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
+        </a>
       </div>
     </div>
+  
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
